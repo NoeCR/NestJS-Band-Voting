@@ -1,0 +1,21 @@
+version: "3.2"
+
+services:
+  band-voting-service:
+    container_name: band-voting-service
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./dist:/usr/local/app/dist
+      - ./src:/usr/local/app/src
+      - ./test:/usr/local/app/test
+      - ./jest.config.js:/usr/local/app/jest.config.js
+      - ./nest-cli.json:/usr/local/app/nest-cli.json
+      - ./tsconfig.build.json:/usr/local/app/tsconfig.build.json
+      - ./tsconfig.json:/usr/local/app/tsconfig.json
+    ports:
+      - 8080:8080
+      - 9229:9229
+    env_file:
+      - .env

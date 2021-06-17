@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { ControllerController } from './controller/controller.controller';
+import { BandController } from './controller/band.controller';
 
 @Module({
-  controllers: [ControllerController],
+  controllers: [BandController],
 })
-export class BandModule {}
+export class BandModule { }

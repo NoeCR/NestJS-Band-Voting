@@ -22,5 +22,5 @@ function initSwagger(app: INestApplication, configService: ConfigService) {
 
   initSwagger(app, configService);
 
-  await app.listen(configService.get(CONFIG.PORT));
+  await app.listen(8080);
 })();

@@ -4,4 +4,4 @@ import { BandController } from './controller/band.controller';
 @Module({
   controllers: [BandController],
 })
-export class BandModule { }
+export class BandModule {}

@@ -1,4 +1,5 @@
-import { CreateBandDto } from "../dto/create_band.dto";
+import { EBandStatus } from '@common/enum/band-status.enum';
+import { CreateBandDto } from '../dto/create_band.dto';
 
 export class Band {
   bandId: string;
@@ -6,6 +7,7 @@ export class Band {
   name: string;
   description: string;
   votes: number;
+  status: EBandStatus;
 
   static fromCreateBandDto(data: CreateBandDto): Band {
     const band = new Band();

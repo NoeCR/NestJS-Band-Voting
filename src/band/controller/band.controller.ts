@@ -7,7 +7,7 @@ import { CreateBandDto, CreateBandResponseDto } from '../dto/create_band.dto';
 @ApiTags('Band')
 @Controller('band')
 export class BandController {
-  constructor() { }
+  constructor() {}
 
   @Post()
   @ApiOperation({ summary: 'Create band', description: 'Create new band into database' })

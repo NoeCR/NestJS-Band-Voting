@@ -1,8 +1,26 @@
 {
-  "singleQuote": true,
-  "trailingComma": "all",
   "printWidth": 120,
   "useTabs": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "trailingComma": "all",
   "bracketSpacing": true,
   "semi": true,
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "printWidth": 120,
+        "useTabs": true,
+        "tabWidth": 4,
+        "bracketSpacing": true
+      }
+    },
+    {
+      "files": ["*.yaml", "*.yml", "*.json"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
 }

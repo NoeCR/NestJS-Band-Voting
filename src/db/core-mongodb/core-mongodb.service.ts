@@ -27,11 +27,11 @@ export class CoreMongodbService<T extends Document> {
     return this.model.findOneAndUpdate(filter, update, opts).select(this.defaultProjection).exec();
   }
 
-  paginate(sort: number, offset: number, limit: number, filter: MongooseFilterQuery<unknown>): Promise<T[]> {
+  paginate(sort: number, page: number, limit: number, filter: MongooseFilterQuery<unknown>): Promise<T[]> {
     return this.model
       .find(filter)
       .sort({ createdAt: sort })
-      .skip(offset > 0 ? (offset - 1) * limit : 0)
+      .skip(page > 0 ? (page - 1) * limit : 0)
       .limit(limit)
       .select(this.defaultProjection)
       .exec();

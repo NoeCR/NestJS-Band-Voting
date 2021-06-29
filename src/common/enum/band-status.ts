@@ -1,4 +1,4 @@
-export enum EBandStatus {
+export enum BandStatus {
   ACTIVE = 'active',
   DISABLED = 'disabled',
   BLOCKED = 'blocked',

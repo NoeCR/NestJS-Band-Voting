@@ -1,4 +1,4 @@
-export enum EMongodbSort {
+export enum MongodbSort {
   Ascendent = 'asc',
   Descendent = 'desc'
 }

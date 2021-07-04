@@ -5,13 +5,22 @@ import { ApiBandModule } from './band/band.module';
 import { ProvidersModule } from './db/providers/providers.module';
 import { BandMongodbModule } from './db/band-mongodb/band-mongodb.module';
 import { BandModule } from './common/services/band/band.module';
+import { WebsocketModule } from './services/websocket/websocket.module';
+import { RedisModule } from './providers/redis/redis.module';
 
-const MODULES = [ConfigModule.forRoot({ load: [configuration] }), ApiBandModule, ProvidersModule, BandModule];
+const MODULES = [
+  ConfigModule.forRoot({ load: [configuration] }),
+  ApiBandModule,
+  ProvidersModule,
+  BandModule,
+  BandMongodbModule,
+  WebsocketModule,
+];
 
 const SERVICES = [];
 
 @Module({
-  imports: [...MODULES, BandMongodbModule],
+  imports: [...MODULES, RedisModule],
   controllers: [],
   providers: [...SERVICES],
 })

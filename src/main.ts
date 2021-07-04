@@ -4,6 +4,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import { CONFIG } from '@config/configuration';
+import { initAdapters } from './adapters.init';
 
 function initSwagger(app: INestApplication, configService: ConfigService) {
   const config = new DocumentBuilder()
@@ -21,6 +22,8 @@ function initSwagger(app: INestApplication, configService: ConfigService) {
   const configService = app.get(ConfigService);
 
   initSwagger(app, configService);
+
+  initAdapters(app);
 
   await app.listen(8080);
 })();
